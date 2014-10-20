@@ -1,6 +1,5 @@
-package com.ustates.app;
+package com.example.unitedstates.app;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
  * Created by prudhvi on 5/21/2014.
  */
 public class MainPageAdapter extends BaseAdapter implements Filterable {
-    public static ArrayList<String> alist = new ArrayList<String>();
+    public ArrayList<String> alist = new ArrayList<String>();
     private QueryFilter queryFilter;
     ArrayList<String> temp;
     ArrayList<String> filterStateList;
@@ -27,57 +26,57 @@ public class MainPageAdapter extends BaseAdapter implements Filterable {
     /* Storing the data behind the ListView in an ArrayList*/
     public MainPageAdapter()
     {
-        alist.add("Alabama");
-        alist.add("Alaska");
-        alist.add("Arizona");
-        alist.add("Arkansas");
-        alist.add("California");
-        alist.add("Colorado");
-        alist.add("Connecticut");
-        alist.add("Delaware");
-        alist.add("Florida");
-        alist.add("Georgia");
-        alist.add("Hawaii");
-        alist.add("Idaho");
-        alist.add("Illinois");
-        alist.add("Indiana");
-        alist.add("Iowa");
-        alist.add("Kansas");
-        alist.add("Kentucky");
-        alist.add("Louisiana");
-        alist.add("Maine");
-        alist.add("Maryland");
-        alist.add("Massachusetts");
-        alist.add("Michigan");
-        alist.add("Minnesota");
-        alist.add("Mississippi");
-        alist.add("Missouri");
-        alist.add("Montana");
-        alist.add("Nebraska");
-        alist.add("Nevada");
-        alist.add("New Hampshire");
-        alist.add("New Jersey");
-        alist.add("New Mexico");
-        alist.add("New York");
-        alist.add("North Carolina");
-        alist.add("North Dakota");
-        alist.add("Ohio");
-        alist.add("Oklahoma");
-        alist.add("Oregon");
-        alist.add("Pennsylvania");
-        alist.add("Rhode Island");
-        alist.add("South Carolina");
-        alist.add("South Dakota");
-        alist.add("Tennessee");
-        alist.add("Texas");
-        alist.add("Utah");
-        alist.add("Vermont");
-        alist.add("Virginia");
-        alist.add("Washington");
-        alist.add("West Virginia");
-        alist.add("Wisconsin");
-        alist.add("Wyoming");
-        temp = alist;
+                alist.add("Alabama");
+                alist.add("Alaska");
+                alist.add("Arizona");
+                alist.add("Arkansas");
+                alist.add("California");
+                alist.add("Colorado");
+                alist.add("Connecticut");
+                alist.add("Delaware");
+                alist.add("Florida");
+                alist.add("Georgia");
+                alist.add("Hawaii");
+                alist.add("Idaho");
+                alist.add("Illinois");
+                alist.add("Indiana");
+                alist.add("Iowa");
+                alist.add("Kansas");
+                alist.add("Kentucky");
+                alist.add("Louisiana");
+                alist.add("Maine");
+                alist.add("Maryland");
+                alist.add("Massachusetts");
+                alist.add("Michigan");
+                alist.add("Minnesota");
+                alist.add("Mississippi");
+                alist.add("Missouri");
+                alist.add("Montana");
+                alist.add("Nebraska");
+                alist.add("Nevada");
+                alist.add("New Hampshire");
+                alist.add("New Jersey");
+                alist.add("New Mexico");
+                alist.add("New York");
+                alist.add("North Carolina");
+                alist.add("North Dakota");
+                alist.add("Ohio");
+                alist.add("Oklahoma");
+                alist.add("Oregon");
+                alist.add("Pennsylvania");
+                alist.add("Rhode Island");
+                alist.add("South Carolina");
+                alist.add("South Dakota");
+                alist.add("Tennessee");
+                alist.add("Texas");
+                alist.add("Utah");
+                alist.add("Vermont");
+                alist.add("Virginia");
+                alist.add("Washington");
+                alist.add("West Virginia");
+                alist.add("Wisconsin");
+                alist.add("Wyoming");
+                temp = alist;
     }
 
     @Override

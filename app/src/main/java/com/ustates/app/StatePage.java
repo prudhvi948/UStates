@@ -1,4 +1,4 @@
-package com.ustates.app;
+package com.example.unitedstates.app;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.widget.ImageView;
 
@@ -17,23 +16,19 @@ public class StatePage extends FragmentActivity implements StatePageFragment.OnF
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_state_page);
         ActionBar actionBar = getActionBar();
         actionBar.setIcon(R.drawable.ic_launcher);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        Thread thread2 = new Thread(){
-            public void run(){
-                ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                StatePageFragmentAdapter statePageFragmentAdapter = new StatePageFragmentAdapter(fragmentManager);
-                viewPager.setAdapter(statePageFragmentAdapter);
-                Intent startIntent = getIntent();
-                int pageNumber = startIntent.getIntExtra("page number", 0);
-                viewPager.setCurrentItem(pageNumber);
-            }
-        };
-        thread2.start();
+        ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        StatePageFragmentAdapter statePageFragmentAdapter = new StatePageFragmentAdapter(fragmentManager);
+        viewPager.setAdapter(statePageFragmentAdapter);
+        Intent startIntent = getIntent();
+        int pageNumber = startIntent.getIntExtra("page number", 0);
+        viewPager.setCurrentItem(pageNumber);
     }
 
 

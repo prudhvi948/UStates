@@ -1,4 +1,4 @@
-package com.ustates.app;
+package com.example.unitedstates.app;
 
 
 import android.app.ActionBar;
@@ -6,10 +6,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.*;
-import android.os.Process;
+import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,21 +29,18 @@ public class MainPage extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        databaseHelper = new UnitedStatesDatabaseHelper(this);
         ActionBar actionBar = getActionBar();
         actionBar.setIcon(R.drawable.ic_launcher);
 
         /* Moving some expensive database work out of UI thread by creating thread1*/
         Thread thread1 = new Thread() {
             public void run() {
-                android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-                databaseHelper = new UnitedStatesDatabaseHelper(MainPage.this);
                 createDatabase();
-                Log.e("done","------------done------------");
             }
         };
         thread1.start();
 
-        Log.e("continue","------------main thread---------------");
         /* MainPageAdapter works with the data behind the ListView*/
         mainPageAdapter = new MainPageAdapter();
         ListView listView = (ListView)findViewById(R.id.main_list);
@@ -56,8 +51,165 @@ public class MainPage extends ActionBarActivity {
         * Each item in the listview is mapped to their respective pages in the viewpager*/
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(final AdapterView<?> adapterView, View view, final int i, long l) {
-                        listItemClick(adapterView, i);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(), StatePage.class);
+                String itemName = adapterView.getItemAtPosition(i).toString();
+                switch(itemName)
+                {
+                    case "Alabama":
+                        intent.putExtra("page number", 0);
+                        break;
+                    case "Alaska":
+                        intent.putExtra("page number", 1);
+                        break;
+                    case "Arizona":
+                        intent.putExtra("page number", 2);
+                        break;
+                    case "Arkansas":
+                        intent.putExtra("page number", 3);
+                        break;
+                    case "California":
+                        intent.putExtra("page number", 4);
+                        break;
+                    case "Colorado":
+                        intent.putExtra("page number", 5);
+                        break;
+                    case "Connecticut":
+                        intent.putExtra("page number", 6);
+                        break;
+                    case "Delaware":
+                        intent.putExtra("page number", 7);
+                        break;
+                    case "Florida":
+                        intent.putExtra("page number", 8);
+                        break;
+                    case "Georgia":
+                        intent.putExtra("page number", 9);
+                        break;
+                    case "Hawaii":
+                        intent.putExtra("page number", 10);
+                        break;
+                    case "Idaho":
+                        intent.putExtra("page number", 11);
+                        break;
+                    case "Illinois":
+                        intent.putExtra("page number", 12);
+                        break;
+                    case "Indiana":
+                        intent.putExtra("page number", 13);
+                        break;
+                    case "Iowa":
+                        intent.putExtra("page number", 14);
+                        break;
+                    case "Kansas":
+                        intent.putExtra("page number", 15);
+                        break;
+                    case "Kentucky":
+                        intent.putExtra("page number", 16);
+                        break;
+                    case "Louisiana":
+                        intent.putExtra("page number", 17);
+                        break;
+                    case "Maine":
+                        intent.putExtra("page number", 18);
+                        break;
+                    case "Maryland":
+                        intent.putExtra("page number", 19);
+                        break;
+                    case "Massachusetts":
+                        intent.putExtra("page number", 20);
+                        break;
+                    case "Michigan":
+                        intent.putExtra("page number", 21);
+                        break;
+                    case "Minnesota":
+                        intent.putExtra("page number", 22);
+                        break;
+                    case "Mississippi":
+                        intent.putExtra("page number", 23);
+                        break;
+                    case "Missouri":
+                        intent.putExtra("page number", 24);
+                        break;
+                    case "Montana":
+                        intent.putExtra("page number", 25);
+                        break;
+                    case "Nebraska":
+                        intent.putExtra("page number", 26);
+                        break;
+                    case "Nevada":
+                        intent.putExtra("page number", 27);
+                        break;
+                    case "New Hampshire":
+                        intent.putExtra("page number", 28);
+                        break;
+                    case "New Jersey":
+                        intent.putExtra("page number", 29);
+                        break;
+                    case "New Mexico":
+                        intent.putExtra("page number", 30);
+                        break;
+                    case "New York":
+                        intent.putExtra("page number", 31);
+                        break;
+                    case "North Carolina":
+                        intent.putExtra("page number", 32);
+                        break;
+                    case "North Dakota":
+                        intent.putExtra("page number", 33);
+                        break;
+                    case "Ohio":
+                        intent.putExtra("page number", 34);
+                        break;
+                    case "Oklahoma":
+                        intent.putExtra("page number", 35);
+                        break;
+                    case "Oregon":
+                        intent.putExtra("page number", 36);
+                        break;
+                    case "Pennsylvania":
+                        intent.putExtra("page number", 37);
+                        break;
+                    case "Rhode Island":
+                        intent.putExtra("page number", 38);
+                        break;
+                    case "South Carolina":
+                        intent.putExtra("page number", 39);
+                        break;
+                    case "South Dakota":
+                        intent.putExtra("page number", 40);
+                        break;
+                    case "Tennessee":
+                        intent.putExtra("page number", 41);
+                        break;
+                    case "Texas":
+                        intent.putExtra("page number", 42);
+                        break;
+                    case "Utah":
+                        intent.putExtra("page number", 43);
+                        break;
+                    case "Vermont":
+                        intent.putExtra("page number", 44);
+                        break;
+                    case "Virginia":
+                        intent.putExtra("page number", 45);
+                        break;
+                    case "Washington":
+                        intent.putExtra("page number", 46);
+                        break;
+                    case "West Virginia":
+                        intent.putExtra("page number", 47);
+                        break;
+                    case "Wisconsin":
+                        intent.putExtra("page number", 48);
+                        break;
+                    case "Wyoming":
+                        intent.putExtra("page number", 49);
+                        break;
+                    default:
+
+                }
+                startActivity(intent);
             }
         });
     }
@@ -147,168 +299,6 @@ public class MainPage extends ActionBarActivity {
         View emptyList = findViewById(R.id.empty_list);
         ListView listView = (ListView)findViewById(R.id.main_list);
         listView.setEmptyView(emptyList);
-    }
-
-    public void listItemClick(AdapterView<?> adapterView, int i)
-    {
-        Intent intent = new Intent(getApplicationContext(), StatePage.class);
-        String itemName = adapterView.getItemAtPosition(i).toString();
-        switch(itemName)
-        {
-            case "Alabama":
-                intent.putExtra("page number", 0);
-                break;
-            case "Alaska":
-                intent.putExtra("page number", 1);
-                break;
-            case "Arizona":
-                intent.putExtra("page number", 2);
-                break;
-            case "Arkansas":
-                intent.putExtra("page number", 3);
-                break;
-            case "California":
-                intent.putExtra("page number", 4);
-                break;
-            case "Colorado":
-                intent.putExtra("page number", 5);
-                break;
-            case "Connecticut":
-                intent.putExtra("page number", 6);
-                break;
-            case "Delaware":
-                intent.putExtra("page number", 7);
-                break;
-            case "Florida":
-                intent.putExtra("page number", 8);
-                break;
-            case "Georgia":
-                intent.putExtra("page number", 9);
-                break;
-            case "Hawaii":
-                intent.putExtra("page number", 10);
-                break;
-            case "Idaho":
-                intent.putExtra("page number", 11);
-                break;
-            case "Illinois":
-                intent.putExtra("page number", 12);
-                break;
-            case "Indiana":
-                intent.putExtra("page number", 13);
-                break;
-            case "Iowa":
-                intent.putExtra("page number", 14);
-                break;
-            case "Kansas":
-                intent.putExtra("page number", 15);
-                break;
-            case "Kentucky":
-                intent.putExtra("page number", 16);
-                break;
-            case "Louisiana":
-                intent.putExtra("page number", 17);
-                break;
-            case "Maine":
-                intent.putExtra("page number", 18);
-                break;
-            case "Maryland":
-                intent.putExtra("page number", 19);
-                break;
-            case "Massachusetts":
-                intent.putExtra("page number", 20);
-                break;
-            case "Michigan":
-                intent.putExtra("page number", 21);
-                break;
-            case "Minnesota":
-                intent.putExtra("page number", 22);
-                break;
-            case "Mississippi":
-                intent.putExtra("page number", 23);
-                break;
-            case "Missouri":
-                intent.putExtra("page number", 24);
-                break;
-            case "Montana":
-                intent.putExtra("page number", 25);
-                break;
-            case "Nebraska":
-                intent.putExtra("page number", 26);
-                break;
-            case "Nevada":
-                intent.putExtra("page number", 27);
-                break;
-            case "New Hampshire":
-                intent.putExtra("page number", 28);
-                break;
-            case "New Jersey":
-                intent.putExtra("page number", 29);
-                break;
-            case "New Mexico":
-                intent.putExtra("page number", 30);
-                break;
-            case "New York":
-                intent.putExtra("page number", 31);
-                break;
-            case "North Carolina":
-                intent.putExtra("page number", 32);
-                break;
-            case "North Dakota":
-                intent.putExtra("page number", 33);
-                break;
-            case "Ohio":
-                intent.putExtra("page number", 34);
-                break;
-            case "Oklahoma":
-                intent.putExtra("page number", 35);
-                break;
-            case "Oregon":
-                intent.putExtra("page number", 36);
-                break;
-            case "Pennsylvania":
-                intent.putExtra("page number", 37);
-                break;
-            case "Rhode Island":
-                intent.putExtra("page number", 38);
-                break;
-            case "South Carolina":
-                intent.putExtra("page number", 39);
-                break;
-            case "South Dakota":
-                intent.putExtra("page number", 40);
-                break;
-            case "Tennessee":
-                intent.putExtra("page number", 41);
-                break;
-            case "Texas":
-                intent.putExtra("page number", 42);
-                break;
-            case "Utah":
-                intent.putExtra("page number", 43);
-                break;
-            case "Vermont":
-                intent.putExtra("page number", 44);
-                break;
-            case "Virginia":
-                intent.putExtra("page number", 45);
-                break;
-            case "Washington":
-                intent.putExtra("page number", 46);
-                break;
-            case "West Virginia":
-                intent.putExtra("page number", 47);
-                break;
-            case "Wisconsin":
-                intent.putExtra("page number", 48);
-                break;
-            case "Wyoming":
-                intent.putExtra("page number", 49);
-                break;
-            default:
-
-        }
-        startActivity(intent);
     }
 
     /* Method to add data into 2 tables in the database*/

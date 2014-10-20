@@ -1,4 +1,4 @@
-package com.ustates.app;
+package com.example.unitedstates.app;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +45,6 @@ public class StatePageFragment extends Fragment {
     private StateWebLinks s2;
     MainPage mainPage;
     UnitedStatesDatabaseHelper u;
-    View view = null;
 
     /**
      * Use this factory method to create a new instance of
@@ -84,12 +82,7 @@ public class StatePageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if(view != null){
-            ((ViewGroup)view.getParent()).removeView(view);
-            return view;
-
-        }
-        view = inflater.inflate(R.layout.state_info, container,false);
+        View view = inflater.inflate(R.layout.state_info, container,false);
         imageView1 = (ImageView)view.findViewById(R.id.state_flag);
         textView1 = (TextView)view.findViewById(R.id.state_name_info);
         textView2 = (TextView)view.findViewById(R.id.abbreviation_info);
@@ -364,8 +357,6 @@ public class StatePageFragment extends Fragment {
                 selectState(50);
                 imageView1.setImageResource(R.drawable.wyoming);
         }
-        u = null;
-        mainPage = null;
         textView1.setPaintFlags(textView1.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         textView1.setText(s1.getName());
         textView2.setText(s1.getAbbreviation());
@@ -439,7 +430,6 @@ public class StatePageFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        Log.e("hi","------------last----------");
         return view;
     }
 

@@ -1,4 +1,4 @@
-package com.ustates.app;
+package com.example.unitedstates.app;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;

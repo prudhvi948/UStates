@@ -1,10 +1,9 @@
-package com.ustates.app;
+package com.example.unitedstates.app;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.util.Log;
 
 
 /**
@@ -13,6 +12,7 @@ import android.util.Log;
 public class StatePageFragmentAdapter extends FragmentPagerAdapter{
 
     private static final int PAGE_COUNT = 50;
+    MainPageAdapter adapter = new MainPageAdapter();
 
     public StatePageFragmentAdapter(FragmentManager fm) {
         super(fm);
@@ -34,6 +34,6 @@ public class StatePageFragmentAdapter extends FragmentPagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return MainPageAdapter.alist.get(position);
+        return adapter.alist.get(position);
     }
 }

@@ -1,4 +1,4 @@
-package com.ustates.app;
+package com.example.unitedstates.app;
 
 import android.content.Intent;
 import android.net.Uri;
