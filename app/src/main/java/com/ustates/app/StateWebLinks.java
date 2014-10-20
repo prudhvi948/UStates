@@ -1,4 +1,4 @@
-package com.example.unitedstates.app;
+package com.ustates.app;
 
 /**
  * Created by prudhvi on 7/2/2014.
