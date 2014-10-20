@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\prudhvi\AndroidStudioProjects\UnitedStates\app\build\intermediates\pre-dexed\debug\classes-137742d33230149efe3624ef6ee7dffdcba90d13.jar"
+        jar="C:\Users\prudhvi\AndroidStudioProjects\UnitedStates\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.4.52\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3dfdf1db5ce5ea2999a5dcde8c8e650b02660059"/>
+    <item
+        dex="C:\Users\prudhvi\AndroidStudioProjects\UnitedStates\app\build\intermediates\pre-dexed\debug\classes-813e1ef76a224178915ad674a2d090e013893c19.jar"
+        jar="C:\Users\prudhvi\AndroidStudioProjects\UnitedStates\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.0.1\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="f71a6822470c9eb659d4f4a6cb57b780b35f058b"/>
+    <item
+        dex="C:\Users\prudhvi\AndroidStudioProjects\UnitedStates\app\build\intermediates\pre-dexed\debug\classes-12fba79018220db57921e2db23f51063d341724b.jar"
+        jar="C:\Users\prudhvi\AndroidStudioProjects\UnitedStates\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\19.0.1\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b1701c49371231e0423b7588539f24bdab485019"/>
+    <item
+        dex="C:\Users\prudhvi\AndroidStudioProjects\UnitedStates\app\build\intermediates\pre-dexed\debug\support-v4-19.0.1-83ff02a22d02222e736b8eb7b3829b1255427e59.jar"
+        jar="C:\Users\prudhvi\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
+
+</pre-dex-items>

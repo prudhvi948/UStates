@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:com.ustates.app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"
+        android:icon="@drawable/ic_action_search"
+        com.ustates.app:showAsAction="ifRoom"
+        com.ustates.app:actionViewClass="android.widget.SearchView"/>
+
+    <item android:id="@+id/action_overflow"
+        android:title="@string/action_overflow"
+        android:icon="@drawable/ic_action_overflow"
+        com.ustates.app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_help"
+                android:title="@string/action_help"
+                android:icon="@drawable/ic_action_help"
+                android:showAsAction="never"/>
+            <item
+                android:id="@+id/action_about"
+                android:title="@string/action_about"
+                android:icon="@drawable/ic_action_about"
+                android:showAsAction="never"/>
+            <!--<item-->
+                <!--android:id="@+id/action_feedback"-->
+                <!--android:title="@string/action_feedback"-->
+                <!--android:icon="@drawable/ic_action_feedback"-->
+                <!--android:showAsAction="never"/>-->
+        </menu>
+    </item>
+</menu>
