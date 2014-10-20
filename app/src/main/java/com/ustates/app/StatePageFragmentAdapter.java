@@ -1,4 +1,4 @@
-package com.example.unitedstates.app;
+package com.ustates.app;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

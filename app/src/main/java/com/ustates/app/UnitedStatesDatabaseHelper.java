@@ -1,4 +1,4 @@
-package com.example.unitedstates.app;
+package com.ustates.app;
 
 import android.content.ContentValues;
 import android.content.Context;
